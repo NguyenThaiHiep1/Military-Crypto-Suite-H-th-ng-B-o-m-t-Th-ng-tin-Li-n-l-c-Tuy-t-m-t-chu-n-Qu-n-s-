@@ -1,0 +1,72 @@
+🛡️ Military Crypto Suite (Google Design Edition)
+Hệ thống Bảo mật Thông tin & Liên lạc Tuyệt mật chuẩn Quân sự
+1. 💎 ĐIỂM MẠNH CỐT LÕI (Security Core)
+Ứng dụng được xây dựng dựa trên những tiêu chuẩn mã hóa tiên tiến nhất hiện nay, đảm bảo dữ liệu của bạn an toàn trước các cuộc tấn công siêu máy tính:
+
+Thuật toán Hash SHA3-512 (Keccak): Sử dụng tiêu chuẩn băm mới nhất của NIST. SHA3-512 đóng vai trò "tiến hóa khóa", biến đổi mật khẩu của bạn thành một chuỗi đại diện 512-bit không thể đảo ngược, bảo vệ tuyệt đối lớp khóa gốc.
+
+Mã hóa AES-256 GCM 7 Lớp: Dữ liệu (Văn bản/File) không chỉ được mã hóa 1 lần mà đi qua 7 chu kỳ mã hóa AES-256 khác nhau. Mỗi lớp sử dụng một khóa con được sinh ra bởi SHA3-512, tạo nên một "két sắt 7 tầng" bất khả xâm phạm.
+
+Chế độ GCM (Galois/Counter Mode): Đảm bảo tính toàn vẹn dữ liệu. Nếu bất kỳ một bit dữ liệu nào bị kẻ gian sửa đổi trên đường truyền, hệ thống sẽ phát hiện và từ chối ngay lập tức.
+
+PBKDF2 với HMAC-SHA512: Chống tấn công dò mật khẩu (Brute-force) bằng cách thực hiện 100,000 vòng lặp tính toán để xác thực khóa.
+
+2. 🚀 TÍNH NĂNG CHÍNH
+🔒 Bảo Mật Dữ Liệu Tĩnh
+Mã hóa Văn bản: Chuyển đổi nội dung tin nhắn thành mã Ciphertext 7 lớp.
+
+Két sắt File & Thư mục: Mã hóa mọi loại định dạng file (Hình ảnh, Video, Tài liệu). Hỗ trợ nén ZIP tự động cho thư mục trước khi mã hóa.
+
+Backup Key: Tự động sinh khóa ngẫu nhiên 64 ký tự và xuất file .txt bảo mật để người dùng lưu trữ.
+
+📞 Liên Lạc Tuyệt Mật (Secure Communication)
+Secure Voice Call (UDP): Đàm thoại Voice mã hóa thời gian thực.
+
+Quy trình bắt tay (Signaling): Chỉ khi người nhận bấm "Chấp nhận" (Accept), luồng âm thanh mã hóa mới bắt đầu được thiết lập, tránh nghe lén thụ động.
+
+Truyền tải File LAN: Gửi tệp tin trực tiếp giữa các máy tính trong mạng không qua trung gian server.
+
+3. 🛠 HƯỚNG DẪN SỬ DỤNG
+3.1. Thiết lập kết nối
+Người chủ (Host): Chọn giao thức UDP, nhập Cổng (ví dụ: 8888), nhập Khóa kênh (Key) và bấm HOST.
+
+Người kết nối (Connect): Nhập IP của máy Host, cùng số Cổng và cùng Khóa kênh, sau đó bấm CONNECT.
+
+3.2. Thực hiện cuộc gọi Voice
+Sau khi đã kết nối thành công qua UDP, người gọi bấm nút 📞 GỌI ĐIỆN.
+
+Màn hình người nhận sẽ hiện Popup thông báo cuộc gọi đến.
+
+Người nhận bấm YES để bắt đầu đàm thoại.
+
+Âm thanh sẽ được mã hóa bằng thuật toán của bạn trước khi gửi qua mạng. Bấm 📴 DỪNG GỌI để kết thúc.
+
+3.3. Mã hóa File/Thư mục
+Chọn đường dẫn tệp tin hoặc thư mục cần bảo vệ.
+
+Nhập mật khẩu (hoặc bấm 🎲 Sinh Key).
+
+Bấm MÃ HÓA FILE. File đầu ra sẽ là file đã được bảo vệ bởi 7 lớp AES + SHA3-512.
+
+4. ⚠️ LƯU Ý BẢO MẬT
+Khóa bí mật (Key): Do sử dụng thuật toán mã hóa cường độ cao, nếu bạn quên mật khẩu, dữ liệu KHÔNG THỂ khôi phục. Hãy bảo quản file .txt chứa key cẩn thận.
+
+Quyền truy cập: Ứng dụng cần quyền truy cập Microphone để thực hiện cuộc gọi và quyền mạng (Firewall) để truyền dữ liệu.
+
+Môi trường: Hoạt động tốt nhất trên mạng LAN hoặc mạng riêng ảo (VPN).
+
+5. THÔNG SỐ KỸ THUẬT
+Ngôn ngữ: Java 9 (Swing/AWT)
+
+Thư viện: Không sử dụng thư viện ngoài (Tăng tính minh bạch, dễ kiểm tra mã độc).
+
+Giao diện: Google Material Design (Light/Blue Theme).
+
+Giao thức mạng: TCP (Tin cậy) & UDP (Thời gian thực).
+
+Phát triển bởi [Nguyễn Thái Hiệp/CÔNG TY TNHH SX-TM-DV HÒA MỸ HƯNG] Bảo mật của bạn là ưu tiên hàng đầu của chúng tôi.
+<img width="1179" height="838" alt="Screenshot 2026-01-06 195242" src="https://github.com/user-attachments/assets/17235736-e6dd-41e8-83dc-7c68672dfbf4" />
+<img width="1182" height="838" alt="Screenshot 2026-01-06 195218" src="https://github.com/user-attachments/assets/f22b1815-4dd5-43de-9e30-eb9d4c21c90d" />
+<img width="1181" height="837" alt="Screenshot 2026-01-06 195159" src="https://github.com/user-attachments/assets/2055683a-9c3c-4e74-bf67-32948e7d7772" />
+<img width="1182" height="837" alt="Screenshot 2026-01-06 195143" src="https://github.com/user-attachments/assets/bff8ad99-e245-49ad-8a91-2b22305ac4b3" />
+
