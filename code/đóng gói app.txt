@@ -1,0 +1,25 @@
+Mở CMD (Command Prompt), gõ lệnh chuyển đến thư mục đó:
+
+Bash
+
+cd /d D:\CryptoToolNet
+Gõ lệnh biên dịch (Biến code thành phần mềm):
+
+Bash
+
+javac GoogleStyleCryptoSuite.java
+Gõ lệnh chạy:
+
+Bash
+
+java GoogleStyleCryptoSuite
+Bước 3: Tạo File chạy nhanh (1 Click)
+Để sau này chỉ cần click đúp là chạy (như file .exe), bạn làm như sau:
+
+Mở Notepad.
+
+Dán dòng này vào: java MilitaryCryptoSuiteFinal
+
+Lưu file cùng thư mục với file code, đặt tên là: RUN.bat (nhớ chọn All Files).
+
+Từ giờ chỉ cần bấm vào file RUN.bat là phần mềm hiện lên.
